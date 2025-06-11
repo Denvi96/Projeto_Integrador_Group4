@@ -1,0 +1,135 @@
+{
+    "metadata": {
+        "fonte": "https://www.jovemprogramador.com.br/duvidas.php",
+        "data_extracao": "2025-06-11T19:55:22.682598",
+        "total_perguntas": 14
+    },
+    "perguntas": [
+        {
+            "id": "16",
+            "pergunta": "O que é Programa Jovem Programador?",
+            "resposta": "É um programa de capacitação tecnológica para formação de PROGRAMADORES para atuação principalmente em empresas de SC, independentemente do local onde estejam instaladas. As aulas são ministradas em unidades do Senac SC em diversas cidades do Estado.",
+            "tags": [
+                "frequente"
+            ],
+            "contexto": "Jovem Programador FAQ"
+        },
+        {
+            "id": "46",
+            "pergunta": "Quem pode participar?",
+            "resposta": "Pessoas a partir de 16 anos que residam nas cidades beneficiadas pelo programa ou em cidades vizinhas e com escolaridade mínima: ensino médio completo ou cursando.",
+            "tags": [
+                "frequente"
+            ],
+            "contexto": "Jovem Programador FAQ"
+        },
+        {
+            "id": "18",
+            "pergunta": "O programa tem algum custo?",
+            "resposta": "O Jovem Programador é gratuito para pessoas com renda familiar per capita de até 2 salários mínimos*, por meio do Programa Senac de Gratuidade PSG). Quem não se enquadra nesse requisito, pode fazer o curso mediante o pagamento de mensalidade.Entre em contato com a unidade Senac SC mais próxima para obter mais informações.*Somar a renda dos familiares (aqueles que tenham alguma renda), e dividir por todos os membros da família (inclusive aqueles que não têm renda nenhuma: como: crianças, adolescentes...) o resultado precisa ser menor que 2 salários mínimos, para se encaixar no Programa Senac de Gratuidade.",
+            "tags": [
+                "frequente"
+            ],
+            "contexto": "Jovem Programador FAQ"
+        },
+        {
+            "id": "24",
+            "pergunta": "Em que local acontecerá o curso?",
+            "resposta": "Em 2025, o Jovem Programador estará presente em cerca de22 cidades catarinenses, com aulasna modalidade híbrida- online e presencial nas unidades do Senac SC.As inscrições para o Jovem Programador 2024 contemplam as seguintes cidades:Biguaçu, Blumenau, Brusque, Caçador, Canoiinhas, Chapecó, Concórdia, Criciúma, Curitibanos, Florianópolis, Fraiburgo, Jaraguá do Sul, Joaçaba, Joinville, Lages, Palhoça, Rio do Sul, São Miguel do Oeste, Tubarão, Videira e Xanxerê.Atenção: Ao ser selecionado,  você receberá as instruções em seu e-mail/celular o endereço da unidade do SENAC SC.",
+            "tags": [
+                "frequente"
+            ],
+            "contexto": "Jovem Programador FAQ"
+        },
+        {
+            "id": "41",
+            "pergunta": "Quando começam as aulas?",
+            "resposta": "As aulas do Jovem Programador estão previstas para começar na segunda quinzena de março de 2025. Mas antes os inscritos devem ser aprovados no workshop inicial, que será realizado no início do mesmo mês. O resultado sai na sequência e você será informado nos nossos canais oficiais de comunicação. Por isso, fique ligado nas nossas redes sociais para não perder nenhuma novidade.",
+            "tags": [
+                "frequente"
+            ],
+            "contexto": "Jovem Programador FAQ"
+        },
+        {
+            "id": "43",
+            "pergunta": "Tenho 15 anos posso me inscrever?",
+            "resposta": "Você irá completar 16 anos até 10/03/2025?SIM -  Você pode participar.NÃO - Terá de esperar a próxima edição.",
+            "tags": [
+                "frequente"
+            ],
+            "contexto": "Jovem Programador FAQ"
+        },
+        {
+            "id": "20",
+            "pergunta": "O curso será a distância?",
+            "resposta": "Será hibrido. Com aulas VIRTUAIS E PRESENCIAIS.",
+            "tags": [
+                "frequente"
+            ],
+            "contexto": "Jovem Programador FAQ"
+        },
+        {
+            "id": "21",
+            "pergunta": "Em que período ocorrerão as aulas?",
+            "resposta": "Ao se inscrever selecione a cidade e a  turma que seja melhor para você. Mas o programa não garante vagas se as turmas já estiverem fechadas. Em alguns municípios, dependendo da demanda, poderá haver mais de um turno.",
+            "tags": [
+                "frequente"
+            ],
+            "contexto": "Jovem Programador FAQ"
+        },
+        {
+            "id": "14",
+            "pergunta": "As vagas são limitadas?",
+            "resposta": "As turmas serão determinadas de acordo com a quantidade de inscritos. Há sim uma flexibilidade de aumento no oferecimento de vagas dependendo da demanda e da cidade em que o inscrito fará as aulas presenciais. Para 2025, o Jovem Programador vai ofereccer mais de 1100 vagas.",
+            "tags": [
+                "frequente"
+            ],
+            "contexto": "Jovem Programador FAQ"
+        },
+        {
+            "id": "26",
+            "pergunta": "Não possuo experiência na área. Posso me inscrever?",
+            "resposta": "Claro,o intuito do Programa é de fato preparar todo e qualquer participante para entrada no mercado de tecnologia.",
+            "tags": [
+                "frequente"
+            ],
+            "contexto": "Jovem Programador FAQ"
+        },
+        {
+            "id": "27",
+            "pergunta": "Preciso estar estudando para me inscrever?",
+            "resposta": "Para começar o curso, não é preciso estar estudando, caso já tenha concluído o ensino médio. Mas, para realizar o estágio durante o PJP, o estudante deve estar frequentando as aulas do programa regularmente.",
+            "tags": [
+                "frequente"
+            ],
+            "contexto": "Jovem Programador FAQ"
+        },
+        {
+            "id": "28",
+            "pergunta": "Quantas horas têm o programa?",
+            "resposta": "Módulo I - 08 horas - Conceitos Lógica - Duas aulas de 4 horas de duraçãoMódulo II - 200 horas  - Programador de SistemasMódulo III - 240 horas  - Programador Web*Os alunos estarão aptos para iniciar o estágio a partir de 35% do decorrer do curso.",
+            "tags": [
+                "frequente"
+            ],
+            "contexto": "Jovem Programador FAQ"
+        },
+        {
+            "id": "29",
+            "pergunta": "Como faço para conseguir uma vaga?",
+            "resposta": "É preciso atender todos os pré-requisitos*.*Pré- requisitos:Com idade a partir de 16 anosQue residam nas cidades beneficiadas pelo programa ou em cidades vizinhas;Escolaridade mínima: cursando o ensino médioSer aprovado no workshop da etapa inicial.",
+            "tags": [
+                "frequente"
+            ],
+            "contexto": "Jovem Programador FAQ"
+        },
+        {
+            "id": "45",
+            "pergunta": "Como vai funcionar?",
+            "resposta": "Todos os inscritos devem participar do Workshop Online. Você poderá realizar o workshop dentro do turno escolhido na hora da inscrição.Durante o workshop será aplicada uma atividade avaliativa, que classificará os jovens que poderão participar da 2º etapa do programa.O resultado será divulgado na área do aluno aqui no site.Acesseárea do alunopara encontrar mais informaçõesCRONOGRAMA COMPLETO - Edição 2025FEVEREIROAté o dia 09/02 – inscrições abertas18 a 20/02 – Workshops28/02 – Divulgação dos selecionados para o Programa 2025MARÇO01 a 15/03 – Matrículas Abertas22/03 – Início das aulas (pode haver alterações em algumas unidades, informe-se)",
+            "tags": [
+                "frequente"
+            ],
+            "contexto": "Jovem Programador FAQ"
+        }
+    ]
+}
