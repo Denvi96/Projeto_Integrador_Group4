@@ -4,6 +4,9 @@ from chat_manager import iniciar_chat
 from config import URLS_PARA_SCRAPING, USE_CACHE
 import logging
 from logging_config import configurar_logging
+from sentence_transformers import util
+util.http_get = lambda *args, **kwargs: requests.get(*args, **kwargs, stream=False)
+
 
 def main():
     configurar_logging()
