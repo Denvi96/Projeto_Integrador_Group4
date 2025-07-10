@@ -1,24 +1,23 @@
 import google.generativeai as genai
 import time
 import threading
-from config import GOOGLE_API_KEY, MODEL_NAME, GENERATION_CONFIG, SAFETY_SETTINGS, MAX_HISTORY, TAMANHO_MAXIMO_PERGUNTA
+from config.settings import settings
 from utils import Colors
 import logging
 from cache import cache_manager
 from datetime import datetime
-from config import SIMILARITY_THRESHOLD
 
 
 logger = logging.getLogger(__name__)
 
 class ChatManager:
     def __init__(self, contexto):
-        genai.configure(api_key=GOOGLE_API_KEY)
+        genai.configure(api_key=settings.GOOGLE_API_KEY)
         
         self.model = genai.GenerativeModel(
-            MODEL_NAME,
-            generation_config=GENERATION_CONFIG,
-            safety_settings=SAFETY_SETTINGS
+            settings.MODEL_NAME,
+            generation_config=settings.GENERATION_CONFIG,
+            safety_settings=settings.SAFETY_SETTINGS
         )
         
         self.prompt_inicial = self._criar_prompt_inicial(contexto)
@@ -160,8 +159,8 @@ Xanxerê
         ])
     
     def _manter_historico(self):
-        if len(self.chat.history) > MAX_HISTORY * 2:
-            self.chat.history = self.chat.history[-MAX_HISTORY * 2:]
+        if len(self.chat.history) > settings.MAX_HISTORY * 2:
+            self.chat.history = self.chat.history[-settings.MAX_HISTORY * 2:]
     
     def enviar_mensagem(self, pergunta):
         # Verificar cache primeiro (nova implementação)
@@ -171,7 +170,7 @@ Xanxerê
         
         try:
             # Validação original mantida
-            if len(pergunta) > TAMANHO_MAXIMO_PERGUNTA:
+            if len(pergunta) > settings.TAMANHO_MAXIMO_PERGUNTA:
                 return "❌ Sua pergunta é muito longa. Por favor, resuma em até 500 caracteres."
             
             # Spinner original mantido

@@ -1,15 +1,14 @@
 import requests
 from bs4 import BeautifulSoup
-from config import TIMEOUT_REQUISICAO, USER_AGENT, CACHE_FILE
-import os
+from config.settings import settings
 import logging
 
 logger = logging.getLogger(__name__)
 
 def buscar_conteudo_da_url(url: str) -> str | None:
-    headers = {'User-Agent': USER_AGENT}
+    headers = {'User-Agent': settings.USER_AGENT}
     try:
-        response = requests.get(url, headers=headers, timeout=TIMEOUT_REQUISICAO)
+        response = requests.get(url, headers=headers, timeout=settings.TIMEOUT_REQUISICAO)
         response.raise_for_status()
         
         # Verificar tipo de conteúdo
@@ -36,9 +35,9 @@ def buscar_conteudo_da_url(url: str) -> str | None:
         return None
 
 def carregar_contexto(urls, use_cache=False):
-    if use_cache and os.path.exists(CACHE_FILE):
+    if use_cache and os.path.exists(settings.CACHE_FILE):
         try:
-            with open(CACHE_FILE, 'r', encoding='utf-8') as f:
+            with open(settings.CACHE_FILE, 'r', encoding='utf-8') as f:
                 logger.info("Usando conteúdo em cache")
                 return f.read()
         except Exception as e:
@@ -59,7 +58,7 @@ def carregar_contexto(urls, use_cache=False):
     
     if use_cache:
         try:
-            with open(CACHE_FILE, 'w', encoding='utf-8') as f:
+            with open(settings.CACHE_FILE, 'w', encoding='utf-8') as f:
                 f.write(contexto)
         except Exception as e:
             logger.error(f"Erro ao salvar cache: {str(e)}")

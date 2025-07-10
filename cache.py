@@ -2,7 +2,7 @@ import sqlite3
 import hashlib
 import json
 from datetime import datetime, timedelta
-from config import CACHE_EXPIRATION_DAYS
+from config.settings import settings
 import numpy as np
 from sentence_transformers import SentenceTransformer
 import logging
@@ -128,7 +128,7 @@ class ChatCache:
     def clean_old_cache(self):
         """Remove entradas antigas do cache"""
         try:
-            expiration_date = datetime.now() - timedelta(days=CACHE_EXPIRATION_DAYS)
+            expiration_date = datetime.now() - timedelta(days=settings.CACHE_EXPIRATION_DAYS)
             self.conn.execute(
                 "DELETE FROM cache WHERE created_at < ?",
                 (expiration_date.strftime('%Y-%m-%d %H:%M:%S'),)

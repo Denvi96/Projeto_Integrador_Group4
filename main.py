@@ -1,7 +1,7 @@
 from utils import limpar_tela, mostrar_cabecalho
 from scraper import carregar_contexto
 from chat_manager import iniciar_chat
-from config import URLS_PARA_SCRAPING, USE_CACHE
+from config.settings import settings
 import logging
 from logging_config import configurar_logging
 from sentence_transformers import util
@@ -16,7 +16,7 @@ def main():
         limpar_tela()
         print("Iniciando o Chatbot JP...")
         
-        contexto = carregar_contexto(URLS_PARA_SCRAPING, USE_CACHE)
+        contexto = carregar_contexto(settings.URLS_PARA_SCRAPING, settings.USE_CACHE)
         if not contexto:
             raise RuntimeError("Não foi possível carregar o contexto necessário")
             
