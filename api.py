@@ -9,6 +9,9 @@ from chat_manager import iniciar_chat_api
 from config.settings import settings
 from logging_config import configurar_logging
 from cache import cache_manager
+from fastapi.staticfiles import StaticFiles
+import os
+from fastapi.middleware.cors import CORSMiddleware
 
 import logging
 
@@ -49,6 +52,19 @@ app = FastAPI(
     version="1.0.0",
     lifespan=lifespan
 )
+
+origins = [
+    "http://localhost:3000",
+]
+
+app.add_middleware(
+    CORSMiddleware,
+    allow_origins=origins,
+    allow_credentials=True,
+    allow_methods=["*"],  # permite OPTIONS, GET, POST etc
+    allow_headers=["*"],
+)
+
 
 # ----------------------------- Models ----------------------------- #
 
