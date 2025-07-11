@@ -246,3 +246,18 @@ def iniciar_chat(contexto):
         except Exception as e:
             logger.error(f"Erro no loop de chat: {str(e)}")
             print(f"\n{Colors.RED}⚠️ Ocorreu um erro inesperado. Continuando...{Colors.RESET}")
+
+# Objeto global reutilizável
+chat_manager_instance = None
+
+def iniciar_chat_api(pergunta: str, contexto: dict) -> str:
+    global chat_manager_instance
+
+    # Inicializa apenas uma vez (como singleton)
+    if chat_manager_instance is None:
+        cache_manager.clean_old_cache()
+        chat_manager_instance = ChatManager(contexto)
+
+    # Envia pergunta para o modelo
+    resposta = chat_manager_instance.enviar_mensagem(pergunta)
+    return resposta

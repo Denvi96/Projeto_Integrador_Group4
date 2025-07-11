@@ -5,6 +5,7 @@ from config.settings import settings
 import logging
 from logging_config import configurar_logging
 from sentence_transformers import util
+
 util.http_get = lambda *args, **kwargs: requests.get(*args, **kwargs, stream=False)
 
 

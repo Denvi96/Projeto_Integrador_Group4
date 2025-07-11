@@ -7,10 +7,13 @@ import numpy as np
 from sentence_transformers import SentenceTransformer
 import logging
 
+logger = logging.getLogger(__name__)
+
+
 class ChatCache:
     def __init__(self, db_path='chat_cache.db'):
         self.db_path = db_path
-        self.conn = sqlite3.connect(db_path)
+        self.conn = sqlite3.connect(db_path, check_same_thread=False)
         self.conn.execute("PRAGMA journal_mode = WAL")  # Melhora performance de escrita
         self.embedding_model = SentenceTransformer('all-MiniLM-L6-v2') # Modelo leve para embedding
         self._create_table()
