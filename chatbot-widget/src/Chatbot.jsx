@@ -14,7 +14,7 @@ export default function Chatbot() {
 
     // Chama sua API FastAPI
     try {
-      const res = await fetch('http://localhost:8000/chat/', {
+      const res = await fetch('https://projeto-integrador-group4.onrender.com/chat/', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({ texto: input }),
