@@ -5,6 +5,7 @@ from config.settings import settings
 import logging
 from logging_config import configurar_logging
 from sentence_transformers import util
+import requests
 
 util.http_get = lambda *args, **kwargs: requests.get(*args, **kwargs, stream=False)
 
@@ -15,7 +16,7 @@ def main():
     
     try:
         limpar_tela()
-        print("Iniciando o Chatbot JP...")
+        print("Iniciando o NPC Chatbot...")
         
         contexto = carregar_contexto(settings.URLS_PARA_SCRAPING, settings.USE_CACHE)
         if not contexto:
