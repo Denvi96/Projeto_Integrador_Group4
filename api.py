@@ -44,8 +44,8 @@ async def lifespan(app: FastAPI):
 # ------------------------- Inicialização FastAPI ------------------------ #
 
 app = FastAPI(
-    title="Chatbot JP API",
-    description="API do assistente JP para responder dúvidas sobre o Programa Jovem Programador.",
+    title="NPC Chatbot API",
+    description="API do assistente NPC para responder dúvidas sobre o Programa Jovem Programador.",
     version="1.0.0",
     lifespan=lifespan
 )
@@ -57,7 +57,7 @@ class Mensagem(BaseModel):
 
 # ---------------------------- Rotas ----------------------------- #
 
-@app.post("/chat/", summary="Enviar pergunta ao JP")
+@app.post("/chat/", summary="Enviar pergunta ao NPC")
 def chat(mensagem: Mensagem):
     try:
         resposta = iniciar_chat_api(mensagem.texto, contexto_global)

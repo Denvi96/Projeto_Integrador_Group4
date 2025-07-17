@@ -24,8 +24,38 @@ class ChatManager:
         self.chat = self._iniciar_sessao_chat()
         
     def _criar_prompt_inicial(self, contexto):
+        
+        dados_cidades_formatado = """
+    [
+        {"cidade": "Araranguá", "telefone": "(48) 3522-1192"},
+        {"cidade": "Biguaçu", "telefone": "(48) 3229-3203"},
+        {"cidade": "Blumenau", "telefone": "(47) 3035-9999"},
+        {"cidade": "Brusque", "telefone": "(47) 3351-2626"},
+        {"cidade": "Caçador", "telefone": "(49) 98412-4995"},
+        {"cidade": "Chapecó", "telefone": "(49) 3361-5000"},
+        {"cidade": "Concórdia", "telefone": "(49) 3442-2993"},
+        {"cidade": "Curitibanos", "telefone": "(49) 3241-2403"},
+        {"cidade": "Canoinhas", "telefone": "(47) 3622-4853"},
+        {"cidade": "Criciúma", "telefone": "(48) 3437-9801"},
+        {"cidade": "Fraiuburgo", "telefone": "(49) 3714-5550"},
+        {"cidade": "Florianópolis", "telefone": "(48) 3229-3200"},
+        {"cidade": "Jaraguá do Sul", "telefone": "(47) 3275-8400"},
+        {"cidade": "Joinville", "telefone": "(47) 3431-6666"},
+        {"cidade": "Joaçaba", "telefone": "(49) 3906-5600"},
+        {"cide": "Lages", "telefone": "(49) 3223-3855"},
+        {"cidade": "Porto União", "telefone": "(42) 98823-9357"},
+        {"cidade": "Palhoça", "telefone": "(48) 3341-9100"},
+        {"cidade": "Rio do Sul", "telefone": "(47) 3521-2266"},
+        {"cidade": "São Miguel do Oeste", "telefone": "(49) 3621-0055"},
+        {"cidade": "Tubarão", "telefone": "(48) 3632-2428"},
+        {"cidade": "Videira", "telefone": "(49) 3714-5550"},
+        {"cidade": "Xanxerê", "telefone": "(49) 3433-3300"}
+    ]
+    """
+
+        
         return f"""
-Você é JP, um assistente especializado em tirar dúvidas sobre o Programa Jovem Programador, uma iniciativa de capacitação tecnológica promovida em Santa Catarina.
+Você é NPC, um assistente especializado em tirar dúvidas sobre o Programa Jovem Programador, uma iniciativa de capacitação tecnológica promovida em Santa Catarina.
 
 🎯 Seu foco deve ser **exclusivamente** no conteúdo do programa, respeitando as seguintes diretrizes obrigatórias:
 
@@ -69,85 +99,27 @@ Você é JP, um assistente especializado em tirar dúvidas sobre o Programa Jove
    Nunca diga frases como “segundo o conteúdo de referência”, “de acordo com as regras”, “conforme instruções”. Apenas aja naturalmente conforme as diretrizes.
 
 ---
+⭐ **TAREFA CRÍTICA: FUNÇÃO 'BUSCAR_TELEFONE'**
+---
+Esta é sua tarefa mais importante. Se a pergunta do usuário contiver o nome de uma cidade que está nos `DADOS_CIDADES` abaixo, sua prioridade MÁXIMA é executar a função 'BUSCAR_TELEFONE'. Ignore outras regras de proatividade e forneça o nome da cidade e seu telefone de forma clara e direta.
+
+-   **Exemplo de pergunta:** "Tem na Palhoça?"
+-   **Exemplo de execução da sua função interna:**
+    1.  Identificar "Palhoça".
+    2.  Buscar "Palhoça" nos `DADOS_CIDADES`.
+    3.  Encontrar o telefone "(48) 3341-9100".
+    4.  Formatar a resposta.
+-   **Exemplo de resposta CORRETA:** "Sim, o programa está disponível em Palhoça! ✅ O contato da unidade do Senac na cidade é **(48) 3341-9100**. Posso te ajudar com outra cidade?"
+
+---
 
 🧠 *Você é claro, simpático, informativo e sempre mantém o foco.*  
 💬 Ao final de cada resposta, pergunte **qual parte do programa o usuário gostaria de saber mais**.
 
+### DADOS DAS CIDADES
+{dados_cidades_formatado}
 
-
-
---- CONTEÚDO DE REFERÊNCIA ---
-Telefones: 
-Araranguá
-(48) 3522-1192
-
-Biguaçu
-(48) 3229-3203
-
-Blumenau
-(47) 3035-9999
-
-Brusque
-(47) 3351-2626
-
-Caçador
-(49) 98412-4995
-
-Chapecó
-(49) 3361-5000
-
-Concórdia
-(49) 3442-2993
-
-Curitibanos
-(49) 3241-2403
-
-Canoinhas
-(47) 3622-4853
-
-Criciúma
-(48) 3437-9801
-
-Fraiuburgo
-(49) 3714-5550
-
-Florianópolis
-(48) 3229-3200
-
-Jaraguá do Sul
-(47) 3275-8400
-
-Joinville
-(47) 3431-6666
-
-Joaçaba
-(49) 3906-5600
-
-Lages
-(49) 3223-3855
-
-Porto União
-(42) 98823-9357
-
-Palhoça
-(48) 3341-9100
-
-Rio do Sul
-(47) 3521-2266
-
-São Miguel do Oeste
-(49) 3621-0055
-
-Tubarão
-(48) 3632-2428
-
-Videira
-(49) 3714-5550
-
-Xanxerê
-(49) 3433-3300
-
-
+### INFORMAÇÕES GERAIS DO SITE
 {contexto}
 --- FIM DO CONTEÚDO DE REFERÊNCIA ---
 """
@@ -155,7 +127,7 @@ Xanxerê
     def _iniciar_sessao_chat(self):
         return self.model.start_chat(history=[
             {"role": "user", "parts": [self.prompt_inicial]},
-            {"role": "model", "parts": ["Olá! Sou o JP, assistente virtual do Jovem Programador. Em que posso te ajudar hoje? 😊"]}
+            {"role": "model", "parts": ["Olá! Sou o NPC, assistente virtual do Jovem Programador. Em que posso te ajudar hoje? 😊"]}
         ])
     
     def _manter_historico(self):
@@ -199,7 +171,7 @@ Xanxerê
         chars = "⠋⠙⠹⠸⠼⠴⠦⠧⠇⠏"
         while not stop_event.is_set():
             for char in chars:
-                print(f"\r{Colors.BLUE}🤖 JP:{Colors.RESET} Processando {char} ", end='', flush=True)
+                print(f"\r{Colors.BLUE}🤖 NPC:{Colors.RESET} Processando {char} ", end='', flush=True)
                 time.sleep(0.1)
         print("\r", end='', flush=True)
     
@@ -219,7 +191,7 @@ def iniciar_chat(contexto):
     
     chat_manager = ChatManager(contexto)
     primeira_resposta = chat_manager.chat.history[-1].parts[0].text
-    print(f"\n{Colors.BLUE}🤖 JP:{Colors.RESET} {primeira_resposta}")
+    print(f"\n{Colors.BLUE}🤖 NPC:{Colors.RESET} {primeira_resposta}")
     
     while True:
         try:
@@ -238,7 +210,7 @@ def iniciar_chat(contexto):
                 break
             
             resposta = chat_manager.enviar_mensagem(pergunta)
-            print(f"{Colors.BLUE}🤖 JP:{Colors.RESET} {resposta}")
+            print(f"{Colors.BLUE}🤖 NPC:{Colors.RESET} {resposta}")
             
         except KeyboardInterrupt:
             print(f"\n{Colors.BLUE}Conversa encerrada pelo usuário.{Colors.RESET}")
